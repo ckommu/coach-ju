@@ -37,13 +37,11 @@
 
 section {
   padding: 0 var(--section-padding-x);
-  outline: 1px solid red;
 }
 
 .section--padded {
   padding-top: var(--section-padding-y);
   padding-bottom: var(--section-padding-y);
-  outline: 1px solid blue;
 }
 
 .section--alt {
