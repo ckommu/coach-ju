@@ -1,0 +1,41 @@
+/* Breakpoint overrides, mobile-first adjustments on top of layout.css */
+
+@media (max-width: 640px) {
+  .page-shell {
+    padding: 0;
+  }
+
+  .site-card {
+    border-radius: 0;
+  }
+
+  .site-header {
+    padding-top: 24px;
+  }
+
+  .site-nav__list {
+    position: fixed;
+    inset: 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    font-size: 20px;
+    background-color: var(--color-card-bg);
+    transform: translateX(100%);
+    transition: transform var(--transition-medium);
+    z-index: 90;
+  }
+
+  .site-nav[data-open="true"] .site-nav__list {
+    transform: translateX(0);
+  }
+
+  .nav-toggle {
+    display: flex;
+    z-index: 91;
+  }
+
+  .testimonial__name {
+    text-align: left;
+  }
+}

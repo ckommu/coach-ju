@@ -1,0 +1,30 @@
+/* Design tokens — colors, fonts, spacing, radii shared across the site */
+:root {
+  /* Colors */
+  --color-page-bg: #1f3a2c;
+  --color-card-bg: #e7e9dc;
+  --color-card-alt-bg: #d6decf;
+  --color-text-heading: #1f3a2c;
+  --color-text-body: #2e382c;
+  --color-text-muted: #5a6b5c;
+  --color-accent-gold: #b08e4a;
+  --color-accent-gold-text: #1f3a2c;
+  --color-accent-pink: #b32f6a;
+  --color-accent-pink-text: #e4d9bf;
+  --color-border: rgba(31, 58, 44, 0.12);
+
+  /* Fonts */
+  --font-script: "Sarina", cursive;
+  --font-serif: "Unna", serif;
+  --font-sans: "Bricolage Grotesque", sans-serif;
+
+  /* Layout */
+  --card-max-width: 960px;
+  --card-radius: 28px;
+  --section-padding-x: clamp(24px, 6vw, 64px);
+  --section-padding-y: clamp(40px, 8vw, 72px);
+
+  /* Effects */
+  --transition-fast: 0.18s ease;
+  --transition-medium: 0.3s ease;
+}

@@ -1,0 +1,336 @@
+/* Reusable UI pieces: nav, buttons, badges, cards, modal */
+
+.logo {
+  font-family: var(--font-script);
+  font-size: 22px;
+  color: var(--color-text-heading);
+}
+
+.site-nav__list {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 14px;
+}
+
+.site-nav__list a {
+  transition: color var(--transition-fast);
+}
+
+.site-nav__list a:hover {
+  color: var(--color-accent-gold);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+}
+
+.nav-toggle span {
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-text-heading);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent-gold);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+.btn--gold {
+  background-color: var(--color-accent-gold);
+  color: var(--color-accent-gold-text);
+}
+
+.btn--pink {
+  background-color: var(--color-accent-pink);
+  color: var(--color-accent-pink-text);
+}
+
+.btn--full {
+  width: 100%;
+  justify-content: center;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.familiar__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.familiar__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+}
+
+.familiar__item .icon {
+  margin-top: 4px;
+  color: var(--color-accent-gold);
+}
+
+.callout__text {
+  max-width: 620px;
+  font-size: 16px;
+}
+
+.about__eyebrow {
+  margin-bottom: 12px;
+}
+
+.about__photo-frame {
+  aspect-ratio: 3 / 4;
+  border-radius: 20px;
+  background: linear-gradient(160deg, var(--color-card-alt-bg), var(--color-accent-gold) 220%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid var(--color-border);
+}
+
+.about__copy p {
+  font-size: 15px;
+}
+
+.about__copy p.emphasis {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border);
+}
+
+.feature__icon {
+  color: var(--color-accent-gold);
+  margin-bottom: 4px;
+}
+
+.feature__icon .icon {
+  width: 22px;
+  height: 22px;
+}
+
+.feature__title {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent-gold);
+}
+
+.feature__text {
+  font-size: 15px;
+}
+
+.divider__svg {
+  display: block;
+  width: 100%;
+  height: 20px;
+  color: var(--color-accent-gold);
+}
+
+.testimonials__intro h2 {
+  font-size: clamp(24px, 3.2vw, 32px);
+  margin: 8px 0 12px;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.testimonial__name {
+  font-size: 20px;
+  text-align: center;
+}
+
+.testimonial p {
+  font-size: 14px;
+}
+
+.testimonial__link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-accent-gold);
+  border-bottom: 1px solid currentColor;
+  align-self: flex-start;
+  transition: opacity var(--transition-fast);
+}
+
+.testimonial__link:hover {
+  opacity: 0.7;
+}
+
+.social-list {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.social-list a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--color-accent-gold);
+  color: var(--color-accent-gold);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.social-list a:hover {
+  background-color: var(--color-accent-gold);
+  color: var(--color-accent-gold-text);
+}
+
+.copyright {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+/* Contact modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity var(--transition-medium), visibility var(--transition-medium);
+}
+
+.modal[data-open="true"] {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(31, 58, 44, 0.55);
+}
+
+.modal__panel {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background-color: var(--color-card-bg);
+  border-radius: 20px;
+  padding: 36px;
+  transform: translateY(12px);
+  transition: transform var(--transition-medium);
+}
+
+.modal[data-open="true"] .modal__panel {
+  transform: translateY(0);
+}
+
+.modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color var(--transition-fast);
+}
+
+.modal__close:hover {
+  background-color: var(--color-card-alt-bg);
+}
+
+.modal__title {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.modal__subtitle {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  margin-bottom: 24px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.form-field label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.form-field input,
+.form-field textarea {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  background-color: #fff;
+  color: var(--color-text-body);
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: 2px solid var(--color-accent-gold);
+  outline-offset: 1px;
+}
